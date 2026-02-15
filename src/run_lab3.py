@@ -9,7 +9,6 @@ geom = Polygon([
     (0,5)
 ])
 
-# Dictionary for added structure
 
 attrs = {
     "area": 50.0,
