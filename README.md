@@ -33,3 +33,20 @@
  
 
 
+## Reflection
+### 1. Why should from_dict() delegate validation to the constructor instead of validating manually inside the method?
+#### from_dict() lets the constructor handle validation so rules aren’t repeated. This ensures all objects are checked the same way and keeps from_dict() simple.
+
+### 2. Why is as_dict() implemented inside the object rather than in demo.py or run_lab3.py?
+####  as_dict() is implemented inside the object so each object knows how to represent itself. This keeps the code organized, avoids repeating the same conversion in multiple scripts, and makes the object responsible for its own data.
+
+### 3. Why must as_dict() return only primitive data types and not Shapely geometry objects?
+#### as_dict() returns only simple data types so it can be easily saved or shared. Shapely objects are too complex to use directly in JSON or dictionaries.
+
+### 4. Why does intersects() belong in the base class instead of being duplicated in Point and Parcel?
+#### intersects() belongs in the base class so all spatial objects can use it without repeating code. Repeating it in every class would make the scripts disorganized and repetitive.
+
+### 5. If you add a new spatial subclass tomorrow (e.g., Building), what changes are required for it to support intersects() — and why?
+#### There will be no changes in intersects() because it is already in SpatialObjects which is a base class, so all subclasses will have automatically have intersection functionality.
+
+

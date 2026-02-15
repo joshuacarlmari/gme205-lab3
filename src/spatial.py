@@ -13,6 +13,7 @@ class SpatialObject:
         Return bounding box as (minx, miny, maxx, maxy).
         """
         return self.geometry.bounds
+    
     def intersects(self, other) -> bool:
         return self.geometry.intersects(other.geometry)
 
