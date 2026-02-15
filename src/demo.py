@@ -43,3 +43,14 @@ parcel = Parcel (parcel_id=101, geometry=geom, attributes=attrs)
 
 print("Parcel BBox:", parcel.bbox())
 print("Parcel Zone:", parcel.attributes["zone"])
+
+
+
+row = {"id": "A", "lon": 121.0, "lat": 14.6, "name": "Gate", "tag": "POI"}
+p = Point.from_dict(row)
+print("FROM DICTIONARY")
+print("ID:", p.id)
+print("Coordinates:", (p.geometry.x, p.geometry.y))
+print("Name:", p.name)
+print("Tag:", p.tag)
+
