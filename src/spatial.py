@@ -67,6 +67,15 @@ class Point(SpatialObject):
             name=d.get("name"),
             tag=d.get("tag")
         )
+    
+    def as_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "tag": self.tag,
+            "geometry": self.to_tuple(),
+            "bbox": self.bbox()
+            }
 
     
 
@@ -79,5 +88,20 @@ class Parcel (SpatialObject):
         super().__init__(geometry)
         self.parcel_id = parcel_id
         self.attributes = attributes
+
+
+    def to_tuple(self):
+        return (self.geometry.x, self.geometry.y)
+
+    def distance_to(self, other):
+        return self.geometry.distance(other.geometry)
+
+
+    def as_dict(self):
+        return {
+            "parcel_id": self.parcel_id,
+            "bbox": self.bbox(),
+            "attributes": self.attributes
+        }
 
     

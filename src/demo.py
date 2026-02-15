@@ -49,8 +49,13 @@ print("Parcel Zone:", parcel.attributes["zone"])
 row = {"id": "A", "lon": 121.0, "lat": 14.6, "name": "Gate", "tag": "POI"}
 p = Point.from_dict(row)
 print("FROM DICTIONARY")
-print("ID:", p.id)
+print("Point ID:", p.id)
 print("Coordinates:", (p.geometry.x, p.geometry.y))
 print("Name:", p.name)
 print("Tag:", p.tag)
 
+
+p = Point.from_dict(row)
+print(p.as_dict())
+
+print(parcel.as_dict())
