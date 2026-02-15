@@ -55,7 +55,7 @@ print("Name:", p.name)
 print("Tag:", p.tag)
 
 
-p = Point.from_dict(row)
-print(p.as_dict())
+point = Point.from_dict(row)
 
+print(point.as_dict())
 print(parcel.as_dict())
