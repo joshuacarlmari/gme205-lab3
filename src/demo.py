@@ -59,3 +59,11 @@ point = Point.from_dict(row)
 
 print(point.as_dict())
 print(parcel.as_dict())
+
+
+A = Point(id="A", lon=5, lat=2)
+B = Point(id="B", lon=12, lat=6)
+
+
+print("Point A intersects parcel:", A.intersects(parcel)) 
+print("Point B intersects parcel:", B.intersects(parcel))
